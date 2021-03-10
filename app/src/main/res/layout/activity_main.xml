@@ -1,89 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:orientation="vertical"
-        android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
-        <RelativeLayout
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:background="@android:color/transparent">
-
-            <ImageView
-                android:id="@+id/ivTitle"
-                android:layout_width="195dp"
-                android:layout_height="49dp"
-                android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/nav_logo_whiteout" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="33dp"
-                android:layout_height="34dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="0dp"
-                app:srcCompat="@drawable/direct" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/camera_shadow_fill"
-                app:tint="@color/black" />
-
-        </RelativeLayout>
-
-        <EditText
-            android:id="@+id/etDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-
-            android:hint="Description..." />
-
-        <Button
-            android:id="@+id/btnCaptureImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:text="Take Picture!"
-            android:textColor="@color/black" />
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@android:color/transparent">
 
         <ImageView
-            android:id="@+id/ivPostImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:id="@+id/ivTitle"
+            android:layout_width="195dp"
+            android:layout_height="49dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/nav_logo_whiteout" />
 
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="33dp"
+            android:layout_height="34dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="0dp"
+            app:srcCompat="@drawable/direct" />
 
-            android:backgroundTint="@color/white"
-            android:text="Submit"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-        <Button
-            android:id="@+id/btnSignOut"
+        <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom|right"
-            android:backgroundTint="@color/white"
-            android:text="Log out" />
+            app:srcCompat="@drawable/camera_shadow_fill"
+            app:tint="@color/black" />
 
-</FrameLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/bottomNavigation"
+        />
+
+    <!--
+ <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|right"
+        android:backgroundTint="@color/white"
+        android:text="Log out" />
+    -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/menu_bottom_navigation" />
+
+</RelativeLayout>
+
+
+
+
+
+

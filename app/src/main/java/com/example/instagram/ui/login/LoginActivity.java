@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
@@ -55,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
         //final ProgressBar loadingProgressBar = findViewById(R.id.loading);
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.followers);
         textView.setText("Don't have an account? ");
 
         if (ParseUser.getCurrentUser() != null) {
